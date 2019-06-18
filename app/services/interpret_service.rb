@@ -2,7 +2,7 @@ class InterpretService
   def self.call action, params
     case action
     when "translate"
-      TranslateModule::translate.new(params).call()
+      SentenceModule::TranslateService.new(params).call()
     when "help"
       HelpService.call()
     else
