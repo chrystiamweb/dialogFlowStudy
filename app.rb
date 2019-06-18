@@ -1,5 +1,9 @@
 require 'json'
 require 'sinatra'
+
+Dir["./app/models/*.rb"].each {|file| require file }
+Dir["./app/services/**/*.rb"].each {|file| require file }
+
 class App < Sinatra::Base
   get '/' do
     'Hello world!'
